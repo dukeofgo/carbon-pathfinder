@@ -45,19 +45,27 @@ export default function LoginPage(){
         auth_data.append('password', currentPassword);
 
         try{
+            console.log(auth_data)
+            console.log("a")
             const response = await apiBase.request({
                 method: 'post',
                 url: REQUEST_LOGIN_URL,
                 data: auth_data,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
-
+            console.log(auth_data)
+            console.log(response)
+            console.log("b")
             localStorage.setItem('access_token', response.data.access_token);
+            console.log("c")
             localStorage.setItem('refresh_token', response.data.refresh_token);
+            console.log("d")
             authContext.setIsAuthenticated(true);
+            console.log("e")
 
         } catch (error: any) {
             setErrorMsg(error.response.data.detail);
+            console.log(error.response.data.detail)
             console.log(error.response);
         }
         
