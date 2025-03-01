@@ -258,7 +258,7 @@ def retrieve_book_pdf(isbn: str):
 @router.get(
     "/retrieve/staticfile/{filename}",
     dependencies=[
-        Security(dependencies.authorize_current_user, scopes=["admin", "superuser"]),
+        Security(dependencies.authorize_current_user, scopes=["user", "admin", "superuser"]),
     ])
 def retrieve_static_file(filename: str):
     try:
