@@ -15,13 +15,17 @@ app.include_router(books_router.router, prefix="/api")
 app.include_router(auth_router.router, prefix="/api")
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
-    "http://localhost",
-    "http://localhost:8080",
-    "http://127.0.0.1:5173",
-    "http://localhost:5173",
-    "http://127.0.0.1:8000",
+    # "http://localhost.tiangolo.com",
+    # "https://localhost.tiangolo.com",
+    # "http://localhost",
+    # "http://localhost:8080",
+    # "http://127.0.0.1:5173",
+    # "http://localhost:5173",
+    # "http://127.0.0.1:8000",
+
+    "http://167.71.202.23",
+    "http://167.71.202.233:8000",
+    "http://167.71.202.233:5173/",
 ]
 
 app.add_middleware(
